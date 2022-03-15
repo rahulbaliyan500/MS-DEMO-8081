@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.home.dto.PersonalUser;
 
-@RequestMapping(value = "personalUser")
+@RequestMapping(value = "/personalUser")
 public interface PersonalUserController {
 	
 	@GetMapping("/users")

@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "personal")
+@Table(name = "personaluser")
 public class PersonalUserEntity {
 
 	@Id
@@ -21,14 +21,7 @@ public class PersonalUserEntity {
 
 	@Column(name = "AGE")
 	private int age;
-
-	public PersonalUserEntity(int id, String name, int age) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.age = age;
-	}
-
+	
 	public int getId() {
 		return id;
 	}
