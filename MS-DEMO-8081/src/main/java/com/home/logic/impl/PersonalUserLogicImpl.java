@@ -3,6 +3,7 @@ package com.home.logic.impl;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,8 +35,7 @@ public class PersonalUserLogicImpl implements PersonalUserLogic {
 //			pUser.setAge(user.getAge());
 //			findUsers.add(pUser);
 //		}
-		
-		
+
 //		users.forEach(x -> {
 //			PersonalUser personalUser = new PersonalUser();
 //			personalUser.setId(x.getId());
@@ -56,6 +56,22 @@ public class PersonalUserLogicImpl implements PersonalUserLogic {
 		}
 
 		return personalUsers;
+	}
+
+	@Override
+	public Optional<PersonalUser> getUser(Integer id) {
+		PersonalUser newUser = new PersonalUser();
+		Optional<PersonalUserEntity> personalUserEntity = personalUserRepository.findById(id);
+		newUser.setId(personalUserEntity.get().getId());
+		newUser.setName(personalUserEntity.get().getName());
+		newUser.setAge(personalUserEntity.get().getAge());
+		return Optional.ofNullable(newUser);
+	}
+
+	@Override
+	public void addUser(PersonalUser user) {
+		// TODO Auto-generated method stub
+
 	}
 
 }
