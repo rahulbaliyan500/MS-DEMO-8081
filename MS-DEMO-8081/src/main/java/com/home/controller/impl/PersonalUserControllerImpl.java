@@ -26,7 +26,7 @@ public class PersonalUserControllerImpl implements PersonalUserController {
 	@Override
 	public ResponseEntity<PersonalUser> getUser(Integer id) throws UserDataAccessException {
 		PersonalUser user = personalUserLogic.getUser(id)
-				.orElseThrow(() -> new UserDataAccessException("UserDataAccessException : ","Not Found Exception Comming : "));
+				.orElseThrow(() -> new UserDataAccessException("UserDataAccessException : ","Not Found Exception Coming : "));
 		return ResponseEntity.ok().body(user);
 	}
 
