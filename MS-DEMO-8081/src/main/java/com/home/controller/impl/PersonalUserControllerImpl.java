@@ -12,7 +12,7 @@ import com.home.exception.UserDataAccessException;
 import com.home.logic.PersonalUserLogic;
 
 @RestController
-@CrossOrigin(origins ="http://localhost:4200/")
+@CrossOrigin(origins= {"*"}, maxAge = 4800, allowCredentials = "false")
 public class PersonalUserControllerImpl implements PersonalUserController {
 
 	@Autowired

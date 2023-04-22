@@ -7,6 +7,5 @@ import com.home.entity.PersonalUserEntity;
 public interface PersonalUserDao {
 
 	List<PersonalUserEntity> users();
-	
 
 }
